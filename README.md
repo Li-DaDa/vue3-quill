@@ -18,6 +18,22 @@ yarn add @webdevil/vue3-quill
 
 ## 使用
 
+vue.config.js
+
+```js
+const webpack = require('webpack')
+
+module.exports = {
+  chainWebpack: (config) => {
+    config.plugin('provide').use(webpack.ProvidePlugin, [
+      {
+        'window.Quill': 'quill'
+      }
+    ])
+  }
+}
+```
+
 ```js
 <template>
   <div style="height: 500px">
